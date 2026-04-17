@@ -77,15 +77,31 @@ Expected:
 
 ## Access the Application
 
-Since `kind` does not expose ports by default, use port-forward:
+After deploying all resources, the application is exposed via the Ingress Controller.
+
+### Open in browser
+
+By default, the application should be доступний at:
+
+```text
+http://localhost
+``` 
+
+
+### If the application is not accessible
+
+Since `kind` does not expose ports by default, you may need to use port-forward:
 
 ```bash
 kubectl port-forward -n ingress-nginx svc/ingress-nginx-controller 8080:80
 ```
 
-Open in browser: 
+Then open:
 
+```text
 http://localhost:8080
+```
+
 
 ---
 
